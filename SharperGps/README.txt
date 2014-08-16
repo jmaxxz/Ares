@@ -1,0 +1,1 @@
+Source code and License, MUST be redistributed with any binaries

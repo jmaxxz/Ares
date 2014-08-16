@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9746B842-3EC5-49AB-8348-7AC94A61A092}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ares.Common.Api</RootNamespace>
+    <AssemblyName>ClientServerAPI</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\bin\Debug\ClientServerAPI\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\bin\Release\ClientServerAPI\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>..\..\bin\x64\Debug\ClientServerAPI\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>..\..\bin\x64\Release\ClientServerAPI\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>..\..\bin\x86\Debug\ClientServerAPI\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>..\..\bin\x86\Release\ClientServerAPI\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Client\IClient.cs" />
+    <Compile Include="Client\IClientProxy.cs" />
+    <Compile Include="DataTypes\DataUtilities.cs" />
+    <Compile Include="DataTypes\MutableGame.cs" />
+    <Compile Include="DataTypes\MutablePlayer.cs" />
+    <Compile Include="DataTypes\MutablePlayerScore.cs" />
+    <Compile Include="DataTypes\MutablePosition.cs" />
+    <Compile Include="DataTypes\MutableScore.cs" />
+    <Compile Include="DataTypes\MutableShot.cs" />
+    <Compile Include="DataTypes\MutableSignalStrength.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Server\GameManagerProxy.cs" />
+    <Compile Include="Server\IClientRegistration.cs" />
+    <Compile Include="Server\IGameManager.cs" />
+    <Compile Include="Server\IGameManagerProxy.cs" />
+    <Compile Include="Server\IPlayerManagement.cs" />
+    <Compile Include="Server\IPlayerManagementProxy.cs" />
+    <Compile Include="Server\IPositionTracker.cs" />
+    <Compile Include="Server\IPositionTrackerProxy.cs" />
+    <Compile Include="Server\IShotTracker.cs" />
+    <Compile Include="Server\IShotTrackerProxy.cs" />
+    <Compile Include="Server\ISignalStrengthTracker.cs" />
+    <Compile Include="Server\ISignalStrengthTrackerProxy.cs" />
+    <Compile Include="Server\PlayerManagementProxy.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AresCommon\AresCommon.csproj">
+      <Project>{25D20997-9C14-4AAB-80AC-2E91A5787647}</Project>
+      <Name>AresCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PositionCommon\PositionCommon.csproj">
+      <Project>{1E1C7FCC-4C11-4BA9-844D-741A90CF5B50}</Project>
+      <Name>PositionCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WirelessCommon\WirelessCommon.csproj">
+      <Project>{45CF05DD-FACE-4FB0-BC30-084503BEA4A6}</Project>
+      <Name>WirelessCommon</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
